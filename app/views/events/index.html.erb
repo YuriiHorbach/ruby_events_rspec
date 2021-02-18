@@ -1,7 +1,7 @@
-<h1>3 Events</h1>
+<h1><%= pluralize(@events.size, 'Event') %></h1>
 
 <ul>
-  <li>Event 1</li>
-  <li>Event 2</li>
-  <li>Event 3</li>
+  <% @events.each do |event| %>
+    <li><%= event %></li>
+  <% end %>
 </ul>
