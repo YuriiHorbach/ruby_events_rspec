@@ -4,7 +4,9 @@
 <% @events.each do |event| %>
   <article>
       <header>
+        <%= image_for(event) %>
         <h2><%= link_to event.name, event %></h2>
+        <h3><%= pluralize(event.capacity, 'spot') %></h3>
       </header>
 
       <p>
@@ -39,3 +41,6 @@
       </table>
   </article>
 <% end %>
+<br>
+
+<%= link_to "Create new",  new_event_path%>

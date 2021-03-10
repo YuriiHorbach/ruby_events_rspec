@@ -1,5 +1,6 @@
   <article>
       <header>
+        <%= image_for(@event) %>
         <h2><%= @event.name %></h2>
       </header>
 
@@ -31,8 +32,17 @@
             <%= format_price(@event) %>
           </td>
         </tr>
+        <tr>
+          <th>
+            Capacity:
+          </th>
+          <td>
+            <%= @event.capacity %>
+          </td>
+        </tr>
       </table>
   </article>
 
   <%= link_to "All Events", events_path %>
   <%= link_to "Edit", edit_event_path(@event) %>
+  <%= link_to "Delete", event_path(@event), method: :delete, data: "Are you crazy?" %>
